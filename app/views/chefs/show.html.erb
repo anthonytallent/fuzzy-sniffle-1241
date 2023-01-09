@@ -1,0 +1,16 @@
+<h1>Meet <%= @chef.name %></h1>
+
+  <section id="dishes">
+  <h3><%= @chef.name %>'s Dishes</h3>
+    <% @chef.dishes.each do |dish| %>
+      <p><%= dish.name %></p>
+    <% end %>
+  </section>
+
+  <section id="dish_form">
+    <%= form_with url: "/chefs/#{@chef.id}", method: :patch, local: true do |f| %>
+      <%= f.label :dish_id, "dish id" %>
+      <%= f.text_field :dish_id %>
+      <%= f.submit "Add Dish" %>
+    <% end %>
+  </section>

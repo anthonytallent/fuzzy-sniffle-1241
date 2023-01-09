@@ -29,7 +29,7 @@ RSpec.describe "dish show page" do
 
   it 'will display the chefs name' do
     visit dish_path(@dish)
-save_and_open_page
+
     expect(page).to have_content(@dish.chef.name)
   end
 end
