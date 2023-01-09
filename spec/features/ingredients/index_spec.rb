@@ -25,7 +25,7 @@ RSpec.describe "chefs ingredients index page" do
 
   it 'displays a chefs ingredients without repeating any' do
     visit chef_ingredients_path(@chef_1)
-save_and_open_page
+
     within("#chefs_ingredients") do
       expect(page).to have_content(@ingredient_1.name)
       expect(page).to have_content(@ingredient_2.name)
